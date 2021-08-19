@@ -1,3 +1,119 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap');
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+*{
+    /*retira todas as magens de todos elementos da pagina */
+    margin: 0;
+    /*retira margem interna dos elementos*/
+    padding: 0;
+}
+
+header{
+    /*define a largura e altura*/
+    width: 100%;
+    height: 100vh;
+    /*retira a barra de rolagem horizontal*/
+    overflow: hidden;
+    position: relative;
+}
+/*ocupa 100% da altura e largura do header (pai)*/
+.img-wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /*adiciona cor na imagem*/
+    background-color: #000;
+}
+/*imagem envelopada dentro da  */
+.img-wrapper img{
+    width: 100%;
+    height: 100%;
+    /*imagem nao fica sendo espremida quando a dimessão horizontal diminui */
+    object-fit: cover;
+    /*adiciona opacidade na imagem, porem fundo padrao e branco*/
+    opacity: 0.5;
+    animation: zoom 5s 
+}
+
+/*animação*/
+@keyframes zoom{
+    0%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.banner{
+    position: absolute;
+    top: 30%;
+    left: 15%;
+}
+
+.banner h1{
+    color: rgb(255, 255, 255);
+    font-size: 3.5rem;/* atribui o tamanho de referencia do pai*/
+    font-family: "Roboto",serif;
+    
+    font-weight: 200;/*diminui o peso da fonte*/   
+    text-shadow: .3rem .1rem 2px rgb(0, 0, 4); /*adiciona sombra de texto*/
+    line-height: 3.5rem; /*reduz a altura da linha*/
+    margin-bottom: 1rem;/*adiciona espaco entre o h1 e tag p principal*/
+}
+
+.banner p{
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    font-family: "Special Elite", serif;
+    color: rgb(231, 236, 236);
+    font-size: 2rem;
+    text-shadow: .3rem .1rem 2px rgb(15, 16, 17);/*adiciona sombra de texto*/
+    margin-bottom: 3rem;/*adiciona espaco entre o p e o botao principal*/
+    margin-right: 2px;
+    white-space: nowrap; /*não quera linha*/
+    overflow: hidden;
+    animation: blinkCursor 500ms infinite normal, digitacao 1s steps(12) 1s normal both;
+    
+}
+@keyframes digitacao{
+    from{
+        width: 0;
+    }
+    to{
+        width: 6.3em;
+    }
+}
+@keyframes blinkCursor{
+    from{
+        border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to{
+        border-right-color: transparent;
+    }
+}
+
+.banner button{
+    font-family: "Roboto", serif;
+    color: rgb(252, 248, 248);
+    text-transform: uppercase;/*deixa toda texto em caixa alta*/
+    background: #1D4350;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A43931, #1D4350);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A43931, #1D4350); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*margem interna nos 4 lados*/
+    padding: 1rem 2rem 1rem 2rem; 
+    /*tira a linha de bordar do botao*/
+    border: none;
+    /*indica interação com o botao*/
+    cursor: pointer;  
+
+}
+
+/*altera a cor e opacidade do botao criando um pseudo classe*/
+.banner button:hover{
+    opacity: 0.9;
+    color: rgb(1, 11, 15);
+}
+
+   
