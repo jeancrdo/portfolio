@@ -10,3 +10,4 @@ Controle de tarefas desse projeto será feito no GitHub
 :up: atualização
 :beatle: correção de bug
 :checkered_flag: release
+
